@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janinayyy Store</title>
+    <style>
+        /* Reset basic margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e7f525, #ee0a3b); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Form Container Styling */
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid #3498db;
+        }
+
+        /* Form Header */
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #2c3e50;
+        }
+
+        /* Labels styling */
+        form label {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Input fields styling */
+        form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #34495e;
+            background-color: #ecf0f1;
+            transition: all 0.3s ease;
+        }
+
+        form input[type="text"]:focus {
+            border-color: #2ecc71;
+            background-color: #ffffff;
+            outline: none;
+        }
+
+        /* Submit button styling */
+        form input[type="submit"] {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* General form input and element spacing */
+        form input {
+            margin-bottom: 20px;
+        }
+
+        /* Form responsiveness */
+        @media (max-width: 480px) {
+            form {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            form input {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            form input[type="submit"] {
+                font-size: 16px;
+            }
+        }
+
+        /* Success message styling */
+        .success-message {
+            display: none;
+            background-color: #06662e;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <form id="storeForm" action="javascript:void(0);">
+        <h1>Janinayyy Store</h1>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Enter description" required>
+        <label for="price">Price</label>
+        <input type="text" id="price" name="price" placeholder="Enter price" required>
+        <label for="quantity">Quantity</label>
+        <input type="text" id="quantity" name="quantity" placeholder="Enter quantity" required>
+        <input type="submit" value="Save">
+        <div class="success-message" id="successMessage">
+            The data you entered has been recorded.
+        </div>
+    </form>
+
+    <script>
+        // JavaScript to handle form submission and display success message
+        document.getElementById('storeForm').addEventListener('submit', function(event) {
+            // Prevent form from refreshing the page
+            event.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Optionally, you can clear the input fields after form submission
+            this.reset();
+        });
+    </script>
+</body>
+</html>
